@@ -7,10 +7,6 @@ export default class Tag {
         this.#element = this.createElement();
     }
 
-    onClick() {
-
-    }
-
     get name() {
         return this.#name; 
     }
@@ -19,6 +15,7 @@ export default class Tag {
         const tag = document.createElement('span');
         tag.textContent = this.#name;
         tag.classList.add('tag');
+        tag.dataset.tag = this.#name;
         return tag;
     }
 

@@ -1,7 +1,5 @@
+import Container from './Container.js';
 import * as api from './service/api.js';
 
 const response = await api.fetchUsers();
-
-response.forEach(() => {
-    
-});
+Container.createElement(response, '.container').render();

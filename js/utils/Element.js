@@ -3,7 +3,7 @@ export const createElement = (elementName, classList, text = '') => {
 
     if (Array.isArray(classList)) {
         element.classList.add(...classList);
-    } else {
+    } else if (classList) {
         element.classList.add(classList);
     }
 

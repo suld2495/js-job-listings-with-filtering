@@ -1,0 +1,288 @@
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+header {
+  background-image: url(/images/bg-header-desktop.svg);
+  background-size: contain;
+  background-color: #5da5a4;
+  width: 100%;
+  height: 156px;
+  position: relative;
+}
+
+.filter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transform: translateY(50%);
+  padding: 0 75px;
+  display: none;
+}
+
+.filter.show {
+  display: block;
+}
+
+.filter > div {
+  box-shadow: 0 0 10px #bbb;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterbox {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 32px;
+  align-items: center;
+}
+
+.filter-item span:first-child {
+  padding: 0 11px;
+  color: #61a7a5;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #f0fafb;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.filter-item span:last-child {
+  width: 32px;
+  height: 100%;
+  background: #5fa7a4;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.filter-item span:last-child:hover {
+  background: #2a3838;
+}
+
+.filter-item span:last-child:before,
+.filter-item span:last-child:after {
+  content: '';
+  width: 16px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 16px;
+  left: 8px;
+}
+
+.filter-item span:last-child:before {
+  transform: rotate(45deg);
+}
+
+.filter-item span:last-child:after {
+  transform: rotate(135deg);
+}
+
+.clear {
+  display: flex;
+  align-items: center;
+  color: #5fa7a4;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.clear:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 75px;
+  background-color: #f0fafb;
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.person {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 17px #a1d4d9;
+  padding: 30px 40px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.person.featured:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: #5da1a2;
+  border-radius: 10px 0 0 10px;
+}
+
+.work {
+  font-size: 17px;
+  color: #61a7a5;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.top {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.profile-tag {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.profile-tag:first-child {
+  background-color: #5fa7a4;
+}
+
+.profile-tag:last-child {
+  background-color: #2a3936;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.job {
+  font-size: 22px;
+  color: #323e3c;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.job:hover {
+  color: #5fa7a4;
+}
+
+.bottom {
+  display: flex;
+  gap: 30px;
+  color: #889190;
+  font-size: 17px;   
+}
+
+.bottom span {
+  position: relative;   
+}
+
+.bottom span:not(:last-child):after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #889190;
+  display: block;
+  top: 50%;
+  right: -17px;
+  transform: translateY(-50%);
+  border-radius: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  background-color: #e3f4f8;
+  color: #589b92;
+  padding: 0 9px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.tag:hover {
+  background: #5da5a4;
+  color: #fff;
+}
+
+@media (max-width: 940px) {
+  .left, .person {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
+
+  .left {
+    margin-top: -70px;
+  }
+
+  main {
+    padding-top: 120px;
+  }
+
+  .container {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 640px) {
+  main, .filter {
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+  }
+
+  .person {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
